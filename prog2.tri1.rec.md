@@ -2,8 +2,6 @@
 
 ## Disciplina: Programação II
 
----
-
 # Sistema Web de Confirmação de Participação em Evento
 
 Desenvolva uma aplicação web de página única (Single Page Application) para confirmação de participação em um evento.
@@ -13,8 +11,6 @@ A aplicação deverá possuir:
 * front-end em HTML, CSS e JavaScript;
 * back-end responsável pela leitura e gravação dos dados;
 * armazenamento utilizando exclusivamente um arquivo JSON.
-
----
 
 # Funcionamento esperado
 
@@ -34,8 +30,6 @@ O usuário não poderá cadastrar novos nomes.
 
 Todos os convidados já devem existir previamente no arquivo JSON.
 
----
-
 # Requisitos obrigatórios
 
 ## Front-end
@@ -52,8 +46,6 @@ A aplicação deve possuir apenas uma página web.
 * atualização dinâmica da página sem recarregar;
 * validação de entradas.
 
----
-
 # Back-end
 
 O sistema deve possuir servidor próprio.
@@ -66,15 +58,13 @@ O sistema deve possuir servidor próprio.
 * tratamento de erros;
 * separação entre lógica e rotas.
 
----
-
 # Armazenamento
 
 Não deve ser utilizado banco de dados.
 
 Todos os dados devem ser armazenados exclusivamente em:
 
-```txt id="7cmckn"
+```txt
 dados.json
 ```
 
@@ -84,7 +74,7 @@ dados.json
 
 Exemplo:
 
-```json id="8fyl6y"
+```json
 [
   {
     "nome": "Ana",
@@ -99,8 +89,6 @@ Exemplo:
 ]
 ```
 
----
-
 # Funcionalidades obrigatórias
 
 ## Pesquisa de convidado
@@ -113,8 +101,6 @@ Exemplo:
 
 * pesquisar “car” deve encontrar “Carlos”.
 
----
-
 ## Confirmação
 
 Após selecionar seu nome, o usuário poderá:
@@ -122,16 +108,12 @@ Após selecionar seu nome, o usuário poderá:
 * confirmar presença;
 * informar quantidade de acompanhantes.
 
----
-
 ## Atualização
 
 Ao salvar:
 
 * o arquivo JSON deve ser atualizado;
 * os dados devem permanecer salvos após reiniciar o servidor.
-
----
 
 ## Estatísticas
 
@@ -142,8 +124,6 @@ A página deve exibir automaticamente:
 * total ausente;
 * total de acompanhantes.
 
----
-
 # Regras obrigatórias
 
 * nomes não podem ser alterados;
@@ -151,8 +131,6 @@ A página deve exibir automaticamente:
 * acompanhantes não podem ser negativos;
 * o sistema deve impedir confirmação sem selecionar um nome;
 * a aplicação não pode recarregar a página inteira durante o uso.
-
----
 
 # Requisitos mínimos de código
 
@@ -165,8 +143,6 @@ O projeto deve possuir:
 * manipulação de arquivo JSON;
 * comunicação assíncrona com `fetch`.
 
----
-
 # Tecnologias permitidas
 
 Os alunos podem escolher:
@@ -176,11 +152,9 @@ Os alunos podem escolher:
 * PHP;
 * Java.
 
----
-
 # Estrutura mínima esperada
 
-```txt id="0icmvl"
+```txt
 prog2.tri1.rec/
 │
 ├── frontend/
@@ -190,7 +164,6 @@ prog2.tri1.rec/
 └── .gitignore
 ```
 
----
 
 # Nome obrigatório do repositório
 
@@ -200,7 +173,6 @@ O repositório deverá se chamar exatamente:
 prog2.tri1.rec
 ```
 
----
 
 # README obrigatório
 
@@ -211,8 +183,6 @@ O `README.md` deve conter:
 * instruções de execução;
 * prints da aplicação;
 * explicação da estrutura do projeto.
-
----
 
 # Critérios de avaliação
 
@@ -227,8 +197,6 @@ O `README.md` deve conter:
 
 Total: **10,0 pontos**
 
----
-
 # Restrições
 
 Não será aceito:
@@ -239,8 +207,6 @@ Não será aceito:
 * projetos sem orientação a objetos;
 * uso apenas de HTML estático;
 * ausência de persistência em JSON.
-
----
 
 # Observações finais
 
