@@ -1,4 +1,4 @@
-# Atividade de Recuperação — Trimestre 1
+# Atividade de Recuperação - Trimestre 1
 
 ## Disciplina: Programação II
 
