@@ -11,3 +11,26 @@
 | 2°        | 15/05/2026   | github: prog2.tri2.ativ-extra-1                                          | `[EXTRA]` adionar capacidade de fazer cache em rotas estáticas no `api.ts` | treinar a capacidade de interpretação de código e implementação de funcionalidades |
 | 2º        | 22/02/2026   | github: prog2.tri2.ativ1, mensagem do commit deve ser #prog2.tri2.ativ1  | [Seguir o tutorial](https://github.com/prfdnl/2026-ia24-prog2/blob/main/tri2.ativ1.tuto.001.md) | descrito no próprio tutorial |
 
+# Steps
+
+## Abrir pasta no `cmd`
+
+No windows crie um pasta nova
+- abra a pasta criada 
+- na barra de caminho digite `cmd` e pressione enter
+
+## Clonar o repósitório com chave `gph`
+
+Na pasta criada execute:
+
+```bash
+git clone https://<<githib_token>>@github.com/<<repo>> projeto
+```
+
+## Abrir o `vscode` com configurações em pasta específica
+
+Na pasta criada execute:
+
+```bash
+code --user-data-dir=data-vscode projeto
+```
