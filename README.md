@@ -24,7 +24,7 @@ No windows crie um pasta nova
 Na pasta criada execute:
 
 ```bash
-git clone https://<<githib_token>>@github.com/<<repo>> projeto
+git clone https://<<github_token>>@github.com/<<repo>> projeto
 ```
 
 ## Abrir o `vscode` com configurações em pasta específica
