@@ -19,7 +19,7 @@ No windows crie um pasta nova
 - abra a pasta criada 
 - na barra de caminho digite `cmd` e pressione enter
 
-## Clonar o repósitório com chave `gph`
+## Clonar o repósitório com chave `ghp`
 
 Na pasta criada execute:
 
