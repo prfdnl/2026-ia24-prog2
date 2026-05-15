@@ -4,7 +4,7 @@
 
 # Entregáveis
 
-| Trimestre | Data/Entrega | Onde                                                                     | Atividade | Objetivo |
+| Trimestre | Data/Entrega | Onde/Como entregar                                                       | Atividade | Objetivo |
 |:---------:|:------------:| ------------------------------------------------------------------------ | --------- | -------- |
 | 1º        | 19/05/2026   | github: prog2.tri1.rec *(informar conclusáo por email/whatsapp)*         | `[RECUPERAÇÃO]` [leia e faça o solicitado neste link](https://github.com/prfdnl/2026-ia24-prog2/blob/main/prog2.tri1.rec.md) | treinar e demonstrar conhecimento da matéria a fim de recurar nota e conteúdo |
 | 2°        | 12/05/2026   | github: garatujas                                                        | garatujas/000-leitura-api.md: criar o arquivo e adicionando o conteúdo dos arquivos core.ts e api.turma02.ts e comentando seu funcionamento e cada uma das linhas. | treinar a capacidade de interpretação de código |
