@@ -1,5 +1,7 @@
 database.sqlite
 .installers
+.vscode
+bun.lock
 
 # dependencies (bun install)
 node_modules
