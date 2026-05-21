@@ -8,6 +8,7 @@ import { Database } from "bun:sqlite";
 // }
 
 const db = new Database("database.sqlite")
+const querySelectItems = db.prepare("SELECT * FROM items")
 
 class Item {
   constructor(public title: string) { }
@@ -26,7 +27,8 @@ class TodoList {
   }
 
   getItems() {
-    return [...this.items]
+    const items = querySelectItems.all()
+    return items
   }
 }
 
