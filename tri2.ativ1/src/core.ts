@@ -8,7 +8,11 @@ import { Database } from "bun:sqlite";
 // }
 
 const db = new Database("database.sqlite")
+
+db.run("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL)")
+
 const querySelectItems = db.prepare("SELECT * FROM items")
+const queryInsertItem = db.prepare("INSERT INTO items (title) VALUES (?)")
 
 class Item {
   constructor(public title: string) { }
@@ -20,6 +24,7 @@ class TodoList {
 
   addItem(item: Item) {
     this.items.push(item)
+    queryInsertItem.run(item.title)
   }
 
   removeItem(index: number) {

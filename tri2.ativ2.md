@@ -10,3 +10,10 @@
 ## Descrição
 
 Na pasta `tri2.ativ1` existe o projeto parcial que fizemos em sala de aula, onde estamos adicionando a capacidade de nosso sistema salvar informações em um  banco de dados `sqlite`, o objetivo é ler esse código, entender seu funcionamento e reescrever o métodos do `ToDo List` para usar o banco de dados ao invés de um arquivo `json`.
+
+Altere e teste as funções:
+
+- `addItem` para adicionar um item no banco de dados
+- `getItems` para retornar os itens do banco de dados
+- `deleteItem` para deletar um item do banco de dados
+- `updateItem` para atualizar um item do banco de dados
