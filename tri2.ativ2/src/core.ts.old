@@ -16,8 +16,8 @@ db.run(`
   )
 `)
 
-const querySelectItems = db.query("SELECT * FROM items")
-const queryInsertItem = db.query("INSERT INTO items (title) VALUES (?)")
+const querySelectItems = db.prepare("SELECT * FROM items")
+const queryInsertItem = db.prepare("INSERT INTO items (title) VALUES (?)")
 
 class Item {
   constructor(public title: string) { }
