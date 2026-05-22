@@ -17,3 +17,7 @@ Altere e teste as funções:
 - `getItems` para retornar os itens do banco de dados
 - `deleteItem` para deletar um item do banco de dados
 - `updateItem` para atualizar um item do banco de dados
+
+## Resultado esperado
+
+No repositório `prog2.tri2.ativ2` deve conter o código atualizado e funcionando, onde as rotas do `ToDo List` estão usando o banco de dados para salvar as informações, e não mais um arquivo `json`. O arquivo `README.md` deve conter uma explicação de como o código funciona e como as funções foram implementadas, além de um passo a passo de como rodar o projeto e testar as rotas do `ToDo List`.
