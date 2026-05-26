@@ -1,36 +1,64 @@
+import DatabaseManager from "./DatabaseManager"
+
 export type ItemProps = {
-  id?: number
   title: string
 }
 
+export type ItemPropsWithId = ItemProps & {
+  id: number
+}
+
+export type CachedItem = {
+  [id: number]: Item
+}
+
 class Item {
-  protected id: number | null
-  protected changed: boolean = false
-  protected props: ItemProps
+  private static cachedItems: CachedItem = {}
+  private id!: number
+  private properties!: ItemProps
 
-  constructor(props: Partial<ItemProps>) {
-    this.id = null
-    this.props = Object.assign({ title: '' }, props)
+  constructor(id: number)
+  constructor(properties: ItemProps)
+  constructor(arg: number | ItemProps) {
+    if (typeof arg === 'number')
+      return this.load(arg)
+    if (typeof arg === 'object')
+      return this.create(arg)
+    throw new Error('Invalid argument for Item constructor. Expected number or ItemProps.')
   }
 
-  set title(title: string) {
-    this.props.title = title
-    this.changed = true
+  private load(id: number) {
+    if (Item.cachedItems[id]) 
+      return Item.cachedItems[id]
+    const itemData = DatabaseManager.Item.one(id)
+    if (!itemData)
+      throw new Error(`Item with id ${id} not found.`)
+    const { id: itemId, ...properties } = itemData
+    this.id = itemId
+    this.properties = properties
+    Item.cachedItems[id] = this
+    return this
   }
 
-  get title(): string {
-    return this.props.title
+  private create(properties: ItemProps) {
+    const id = DatabaseManager.Item.insert(properties)
+    this.id = id
+    this.properties = properties
+    Item.cachedItems[id] = this
+    return this
   }
 
-  store() {
-    if (!this.changed) 
-      return
-  }
-
-  toJSON() {
-    return {
-      id: this.id,
-      title: this.props.title
-    }
+  get title() {
+    return this.properties.title
   }
 }
+
+
+const i = new Item({ title: 'Example Item' })
+const a = new Item(1)
+const b = new Item(2)
+
+
+console.log(a === b) // true
+console.log(a.title) // 'Example Item'
+console.log(b.title) // 'Example Item'
