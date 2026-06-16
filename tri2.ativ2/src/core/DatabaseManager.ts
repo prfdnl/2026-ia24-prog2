@@ -1,4 +1,3 @@
-import type { ItemProps, ItemPropsWithId } from './Item'
 import { Database } from 'bun:sqlite'
 
 const db = new Database('database.sqlite', { strict: true })
@@ -9,6 +8,9 @@ db.run(`
     title TEXT NOT NULL
   )
 `)
+
+export type ItemProps = { title: string }
+export type ItemPropsWithId = ItemProps & { id: number }
 
 class Item {
   public static all = () => db
@@ -25,12 +27,12 @@ class Item {
     .lastInsertRowid as number
 
   public static update = (id: number, props: ItemProps) => db
-    .query('UPDATE items SET title = $title WHERE id = $id')
+    .query('UPDATE items SET title = $title WHERE id = $id LIMIT 1')
     .run({ id, title: props.title })
     .changes
 
   public static delete = (id: number) => db
-    .query('DELETE FROM items WHERE id = $id')
+    .query('DELETE FROM items WHERE id = $id LIMIT 1')
     .run({ id }).changes
 }
 
