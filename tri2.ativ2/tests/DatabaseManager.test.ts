@@ -12,6 +12,6 @@ describe('DataManager', () => {
         expect(deleteResult).toBe(1)
     })
 
-    test.todo('deve inserir/atulizar e deletar um item', () => {})
+    test.todo('deve inserir/ataulizar e deletar um item', () => {})
     test.todo('deve inserir varios/buscar inseridos e exclui-los', () => {})
 })
