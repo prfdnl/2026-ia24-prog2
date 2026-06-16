@@ -1,6 +1,0 @@
-2026-06-16 15:33:59.776 [info] StorageMainService: creating application shared storage
-2026-06-16 15:33:59.828 [info] [shared storage] Creating shared storage database at 'c:\Users\Professor\.vscode-shared\sharedStorage\state.vscdb' (wasCreated: false)
-2026-06-16 15:33:59.829 [info] [shared storage] Initializing fallback application storage (path: c:\...ñ\2026-ia24-prog2\.data\vscode\user\User\globalStorage\state.vscdb)
-2026-06-16 15:33:59.843 [info] [shared storage] Fallback application storage initialized with 79 items
-2026-06-16 15:33:59.845 [info] update#setState idle
-2026-06-16 15:34:03.105 [info] Extension host with pid 16096 exited with code: 0, signal: unknown.
