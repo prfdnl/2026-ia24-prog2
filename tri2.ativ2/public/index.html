@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='pt-BR'>
+
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>To-Do List</title>
-  <link rel='stylesheet' href='main.css'>
-  <script type="module" src="./main.js"></script>
+  <script type="module">
+    const formAdd = document.querySelector("#formAdd")
+    const templateItem = document.querySelector("#templateItem")
+
+    function addElItem(id, title) {
+      const clonedItem = templateItem.content.cloneNode(true)
+      const elTitle = clonedItem.querySelector('span')
+      const elBtDelete = clonedItem.querySelector('button')
+      elBtDelete.addEventListener('click', async () => {
+        const response = await fetch(`/item/${id}`, { method: "DELETE" })
+        elBtDelete.setAttribute('disabled', true)
+        if (response.ok) {
+          elBtDelete.closest("li").remove()
+        }
+        alert("error")
+        elBtDelete.removeAttribute('disabled')
+      })
+      elTitle.innerText = title
+      templateItem.after(clonedItem)
+    }
+
+    formAdd.addEventListener('submit', async (ev) => {
+      ev.preventDefault()
+      const title = formAdd.elTitle.value
+      if (title.trim() === '') return
+      fieldsetAdd.setAttribute('disabled', true)
+      const response = await fetch("/item", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title })
+      })
+      const dataResponse = await response.json()
+      addElItem(dataResponse.id, dataResponse.title)
+      formAdd.elTitle.value = ''
+      fieldsetAdd.removeAttribute('disabled')
+    })
+
+
+    const response = await fetch("/item")
+    const initialItems = await response.json()
+    initialItems.forEach(({ id, title }) => addElItem(id, title))
+  </script>
 </head>
+
 <body>
-  <main id="app">
-    <div id="input-container">
-      <input type="text" id="task-input" placeholder="Enter a new task">
-      <button id="add-button">Add Task</button>
-    </div>
-    <ul id="list">
-      <template>
-        <li>
-          <span class="title">title</span>
-          <button class="bt-delete">Delete</button>
-        </li>
-      </template>
-    </ul>
-  </main>
+
+  <form id="formAdd">
+    <fieldset id="fieldsetAdd">
+      <input name="elTitle">
+      <button name="elBtRemove">adicionar</button>
+    </fieldset>
+  </form>
+
+  <ul>
+    <template id="templateItem">
+      <li>
+        <button>remove</button>
+        <span>title here</span>
+      </li>
+    </template>
+  </ul>
+
 </body>
+
 </html>

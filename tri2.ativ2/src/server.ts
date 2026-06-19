@@ -10,9 +10,14 @@ function routeTest(req: Bun.BunRequest) {
 
 const { hostname, port } = Bun.serve({
     routes: {
+        "/": () => new Response(Bun.file("public/index.html")),
         "/debug": new Response(Bun.file("public/debug.html")),
         "/test": routeTest,
         "/item": {
+            GET: () => {
+                return Response.json(Item.loadAll().map(({ id, title }) => ({ id, title })))
+            },
+
             POST: async (req) => {
                 let data
 
@@ -34,17 +39,50 @@ const { hostname, port } = Bun.serve({
                     return Response.json('ITERNAL SERVER ERROR', { status: 500 })
                 }
 
-                return Response.json(item)
+                return Response.json({
+                    id: item.id,
+                    title: item.title
+                })
             }
         },
         "/item/:id": {
             GET: (req) => {
-                const item = Item.load(req.params.id)
-                return Response.json(item)
+                let id: number = parseInt(req.params.id)
+
+                if (isNaN(id)) {
+                    return Response.json('É NECESSÁRIO INFORMAR UM ID (número inteiro)')
+                }
+
+                let item: Item
+
+                try {
+                    item = Item.load(id)
+                } catch (e) {
+                    return Response.json({}, { status: 500 })
+                }
+
+                return Response.json({
+                    id: item.id,
+                    title: item.title
+                })
+            },
+
+            DELETE: (req) => {
+                try {
+                    let id: number = parseInt(req.params.id)
+                    if (isNaN(id))
+                        return Response.json('É NECESSÁRIO INFORMAR UM ID (número inteiro)')
+                    const item = Item.load(id)
+                    item.remove()
+                } catch (e) {
+                    console.log(e)
+                    return Response.json(e, { status: 500 })
+                }
+                return Response.json({}, { status: 200 })
             }
         }
     },
     fetch: () => new Response('Not Found', { status: 404 })
 })
 
-console.log(`⚡ Server running on http://${hostname}:${port}`)
+console.log(`⚡ Server running on http://${hostname}:${port}`) 
