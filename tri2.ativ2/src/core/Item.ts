@@ -28,7 +28,11 @@ export class Item {
   }
 
   remove() {
-    throw "MÉTODO AINDA NÃO IMPLEMENTADO"
+    throw "MÉTODO AINDA NÃO IMPLEMENTADO :: VAMOS CONECTAR ISSO COM O BANCO"
+    const proto = Object.getPrototypeOf(this)
+    const keys = Object.keys(Object.getOwnPropertyDescriptors(proto)) as (keyof X)[]
+    const erro = new Error('O item foi removido, seus métodos e atributos não podem ser mais acessados.')
+    keys.forEach(k => this[k] = () => {})
   }
 
   get title() {
