@@ -11,6 +11,7 @@
 | 2°        | 15/05/2026   | github: prog2.tri2.ativ-extra-1                                          | `[EXTRA]` adionar capacidade de fazer cache em rotas estáticas no `api.ts` | treinar a capacidade de interpretação de código e implementação de funcionalidades |
 | 2º        | 22/02/2026   | github: prog2.tri2.ativ1, mensagem do commit deve ser #prog2.tri2.ativ1  | [Seguir o tutorial](tri2.ativ1.tuto.001.md) | descrito no próprio tutorial |
 | 2º        | 29/02/2026   | github: prog2.tri2.ativ2, mensagem do commit deve ser #prog2.tri2.ativ2  | [Enunciado](tri2.ativ2.md) | descrito no próprio tutorial |
+| 2º        | __/07/2026   | github: prog2.tri2.ativ3, mensagem do commit deve ser #prog2.tri2.ativ3  | [Enunciado](tri2.ativ3.md) | descrito no próprio enunciado |
 
 # Steps
 
