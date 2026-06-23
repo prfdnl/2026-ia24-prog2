@@ -31,7 +31,7 @@ O repositório deve possuir o nome:
 
 Escreva trechos de códigos que justiquem a necessidade da existencia dos temas abaixo em a objetos, se necessário compare com programçaõ funcional para justificativa, adicione ao topo de seus arquivos comentários que justifiquem a abordagem tomada na solução (para cada tópico faça duas soluções diferentes):
 
-0. Classes e objetos
+1. Classes e objetos
 0. Atributos e métodos
 0. Construtores (constructor)
 0. Instanciação de objetos
