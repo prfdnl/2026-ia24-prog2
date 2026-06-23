@@ -52,5 +52,5 @@ Escreva trechos de códigos que justiquem a necessidade da existencia dos temas 
 0. Parâmetros padrão
 0. Herança simples
 0. Cadeia de herança
-0. Tratamento de excessões (throw, try, catch)
+0. Tratamento de exceções (throw, try, catch)
 0. Classes e herança de classes de erro
